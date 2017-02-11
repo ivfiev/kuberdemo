@@ -9,7 +9,7 @@ let spin() =
     let row() = String.concat " " <| List.init 6 (fun _ -> randSym() |> string)
     String.concat "<br/>" [row(); row(); row(); row()]
 
-type FiveXThree() as this = 
+type SixXFour() as this = 
     inherit NancyModule()
     do this.Get.["spin"] <- fun _ ->
         spin() |> box
