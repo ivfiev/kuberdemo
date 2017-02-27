@@ -58,6 +58,9 @@
     <Compile Include="6x4.fs" />
     <None Include="App.config" />
     <Content Include="packages.config" />
+    <None Include="Dockerfile">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Mono.Posix">
