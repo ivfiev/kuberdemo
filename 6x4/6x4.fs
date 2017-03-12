@@ -4,6 +4,9 @@ open System
 open Mono.Unix
 open Mono.Unix.Native
 
+let cpu() = 
+    let rec fib n = if n <= 1 then n else fib (n-1) + fib (n-2)
+    fib 38
 
 module UnixHelper =
     let isRunningOnMono() = not <| Object.ReferenceEquals(Type.GetType("Mono.Runtime"), null)
@@ -24,6 +27,7 @@ let spin() =
 type SixXFour() as this = 
     inherit NancyModule()
     do this.Get.["spin"] <- fun _ ->
+        cpu()
         spin() |> box
 
 [<EntryPoint>]
